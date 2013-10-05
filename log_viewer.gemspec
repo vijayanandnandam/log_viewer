@@ -7,11 +7,11 @@ require "log_viewer/version"
 Gem::Specification.new do |s|
   s.name        = "log_viewer"
   s.version     = LogViewer::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of LogViewer."
-  s.description = "TODO: Description of LogViewer."
+  s.authors     = ["vijayanand nandam"]
+  s.email       = ["vijayanand.nandam@gmail.com"]
+  s.homepage    = "http://adminuser.org"
+  s.summary     = "rails log viewer"
+  s.description = "a beautiful log viewer"
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]

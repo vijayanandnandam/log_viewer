@@ -1,0 +1,22 @@
+<h1>Viewing <%= @log_file %></h1>
+<% read_file(@log_file).each do |rl| %>
+<div>
+	<% if !rl.index("Served asset ").present? %>
+		<% lines = rl.split("\n") %>
+		<a href="#" class="log"><%= lines.shift %></a><br/>
+		<div style="display:none;">
+<pre>
+<%= lines.join("\n") %>
+</pre>
+		</div>
+	<% end %>
+</div>
+<% end %>
+<script>
+	$(".log").each(function(){
+		$(this).click(function(event){
+			$(this).closest('div').find('div').toggle();
+			event.preventDefault();
+		});
+	});
+</script>
