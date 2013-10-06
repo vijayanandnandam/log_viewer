@@ -6,9 +6,9 @@ module LogViewer
       current_request = ""
       lines = File.readlines(log_file)
       lines.each do |line|
-        if prev_line == "\n" and line == "\n"
-          requests.unshift(current_request)
-          current_request = ""
+        if line.index('Started ') == 0
+          requests.unshift(current_request) if current_request.present?
+          current_request = line
         else
           current_request += line if line != "\n"
           prev_line = line
