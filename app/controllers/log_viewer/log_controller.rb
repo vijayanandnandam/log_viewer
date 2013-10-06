@@ -1,5 +1,4 @@
 require_dependency "log_viewer/application_controller"
-
 module LogViewer
   class LogController < ApplicationController
     def view
