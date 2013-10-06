@@ -7,7 +7,7 @@ module LogViewer
       File.open(log_file, 'r') do |f|
         while line = f.gets
           if line.index('Started ') == 0
-            requests.unshift(current_request) if current_request.present?
+            requests.unshift(current_request) if current_request.present? and current_request.index("Started").present? and !current_request.index("Served asset ").present? and !current_request.index(root_path).present?
             current_request = line
           else
             current_request += line if line != "\n"
