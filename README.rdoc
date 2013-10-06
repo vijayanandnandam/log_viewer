@@ -2,8 +2,7 @@
 
 To use this log viewer 
 mount this application in your app like
-<tt>
-Rails.application.routes.draw do
-  mount LogViewer::Engine => "/log_viewer"
-end
-</tt>
+
+	Rails.application.routes.draw do
+	  mount LogViewer::Engine => "/log_viewer"
+	end
