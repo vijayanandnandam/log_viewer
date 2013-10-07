@@ -9,7 +9,7 @@ module LogViewer
           if line.index('Started ') == 0
             current_request = line+current_request if line != "\n"
             requests.push(current_request) if current_request.present? and current_request.index("Started").present? and !current_request.index("Served asset ").present? and !current_request.index(root_path[0..-2]).present?
-            break if requests.count == 1000
+            break if requests.count == 100
             current_request = ""
           else
             current_request = line+current_request if line != "\n"

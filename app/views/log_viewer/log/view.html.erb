@@ -1,18 +1,9 @@
 <h1>Viewing <%= @log_file %></h1>
-<% read_file(@log_file).each do |rl| %>
-	<div>
-		<% lines = rl.split("\n") %>
-		<a href="#" class="log" style="<%= "color:red;" if rl.index("Error").present? %>"><%= lines.shift %></a><br/>
-		<div style="display:none;">
-			<pre class="well"><%= print_line(lines.join("\n")) %></pre>
-		</div>
-	</div>
-<% end %>
+<div id="log_details">
+	<%= render "log_display" %>
+</div>
 <script>
-	$(".log").each(function(){
-		$(this).click(function(event){
-			$(this).closest('div').find('div').toggle();
-			event.preventDefault();
-		});
-	});
+	setInterval(function(){
+		$.get("<%= log_view_path %>");
+	}, 10000);
 </script>
