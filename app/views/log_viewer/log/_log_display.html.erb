@@ -1,18 +1,20 @@
-Log Details displayed at <%= Time.zone.now.to_s %><br/>
+<div class="clear"></div>
+<ul>
 <% read_file(@log_file).each do |rl| %>
-	<div class="log_wrapper">
+	<li>
 		<% lines = rl.split("\n") %>
 		<a href="#" class="log <%= "error" if rl.index("Error").present? %>"><%= lines.shift %></a><br/>
-		<div style="display:none;">
-			<pre class="well"><%= print_line(lines.join("\n")) %></pre>
-		</div>
-	</div>
+		<pre class="sub_log" style="display:none;"><%= print_line(lines.join("\n")) %></pre>		
+	</li>
 <% end %>
+</ul>
+
 <script>
 	$(document).ready(function(){
 		$(".log").each(function(){
 			$(this).click(function(event){
-				$(this).closest('div').find('div').toggle();
+                debugger;
+				$(this).siblings('.sub_log').toggle();
 				event.preventDefault();
 			});
 		});
