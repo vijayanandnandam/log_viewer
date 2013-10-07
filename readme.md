@@ -5,12 +5,18 @@ add gem to your Gem file like
 ```ruby
 gem 'log_viewer', :git => 'git://github.com/vijay-cybrilla/log_viewer.git'
 ```
-then run bundle 
-
-modfiy your routes.rb file to mount logviewer in your app
+then run
 
 ```ruby
-	Rails.application.routes.draw do
-	  mount LogViewer::Engine => "/log_viewer"
-	end
+bundle install
+``` 
+
+and modfiy your routes.rb file to mount logviewer in your app
+
+```ruby
+Rails.application.routes.draw do
+  mount LogViewer::Engine => "/log_viewer"
+end
 ```
+
+Now the log viewer will be available at path /log_viewer

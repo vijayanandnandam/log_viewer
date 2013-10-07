@@ -34,3 +34,11 @@
      -moz-border-radius: 3px;
           border-radius: 3px;
 }
+
+.error{
+  color: red;
+}
+
+.log_wrapper{
+  margin: 3px 0px 3px 0px;
+}
