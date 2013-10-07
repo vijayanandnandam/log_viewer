@@ -17,5 +17,10 @@ module LogViewer
       end
       requests.take(1000)
   	end
+
+    def print_line(text)
+      text.gsub( /\[[0-9;]*m/, "" )
+    end
+
   end
 end
