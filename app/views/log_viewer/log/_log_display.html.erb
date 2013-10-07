@@ -1,4 +1,4 @@
-Log Details displayed at <%= Time.zone.now.to_s(:human) %><br/>
+Log Details displayed at <%= Time.zone.now.to_s %><br/>
 <% read_file(@log_file).each do |rl| %>
 	<div>
 		<% lines = rl.split("\n") %>
