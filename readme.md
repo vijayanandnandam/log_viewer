@@ -1,4 +1,5 @@
-= LogViewer
+LogViewer
+==================================
 
 To use this log viewer 
 add gem to your Gem file like
@@ -19,4 +20,4 @@ Rails.application.routes.draw do
 end
 ```
 
-Now the log viewer will be available at path /log_viewer
+Now the log viewer will be available at path `/log_viewer`
