@@ -1,12 +1,12 @@
 <h1>Viewing <%= @log_file %></h1>
 <% read_file(@log_file).each do |rl| %>
-<div>
-	<% lines = rl.split("\n") %>
-	<a href="#" class="log" style="<%= "color:red;" if rl.index("Error").present? %>"><%= lines.shift %></a><br/>
-	<div style="display:none;">
-		<pre><%= print_line(lines.join("\n")) %></pre>
+	<div>
+		<% lines = rl.split("\n") %>
+		<a href="#" class="log" style="<%= "color:red;" if rl.index("Error").present? %>"><%= lines.shift %></a><br/>
+		<div style="display:none;">
+			<pre><%= print_line(lines.join("\n")) %></pre>
+		</div>
 	</div>
-</div>
 <% end %>
 <script>
 	$(".log").each(function(){

@@ -8,7 +8,7 @@ module LogViewer
         while line = f.gets
           if line.index('Started ') == 0
             current_request = line+current_request if line != "\n"
-            requests.push(current_request) if current_request.present? and current_request.index("Started").present? and !current_request.index("Served asset ").present? and !current_request.index(root_path).present?
+            requests.push(current_request) if current_request.present? and current_request.index("Started").present? and !current_request.index("Served asset ").present? and !current_request.index(root_path[0..-2]).present?
             break if requests.count == 1000
             current_request = ""
           else
