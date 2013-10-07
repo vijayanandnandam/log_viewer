@@ -1,0 +1,7 @@
+lib/log_viewer.rb 7eff5a08b6e875676493addb2149b166a6a54749
+lib/log_viewer/engine.rb 992e3a3c76517d200f04a9223e59bd9bb22ca254
+lib/log_viewer/version.rb ee7137a6a73efa8a3fdd43f5ba406f9d90226e22
+app/helpers/log_viewer/log_helper.rb a093167680979603e2bf2aa2801dc7410f6db5da
+app/helpers/log_viewer/application_helper.rb ae4dbdf45fcda8502afedbda76dc9a2b446560c1
+app/controllers/log_viewer/log_controller.rb b91877a4e3842af034f5d265494295e83a3d6cee
+app/controllers/log_viewer/application_controller.rb 58224540eba64fb7200c13eb9f3ee8718db771f5
