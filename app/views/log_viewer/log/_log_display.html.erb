@@ -1,5 +1,5 @@
 <li data-md-hash="<%= hex_digest(rl) %>">
 	<% lines = rl.split("\n") %>
-	<a href="#" class="log <%= "error" if rl.index("Error").present? %>"><%= lines.shift %></a><br/>
+	<a href="#" class="log <%= "error" if has_exception(rl, @all_exceptions) %>"><%= lines.shift %></a><br/>
 	<pre class="sub_log" style="display:none;"><%= print_line(lines.join("\n")) %></pre>		
 </li>

@@ -28,5 +28,11 @@ module LogViewer
       Digest::MD5.hexdigest(text)
     end
 
+    def has_exception(request_log, all_exceptions)
+      all_exceptions.each do |excp|
+        return true if request_log.index(excp).present?
+      end
+      false
+    end
   end
 end
