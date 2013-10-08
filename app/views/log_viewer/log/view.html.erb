@@ -7,5 +7,21 @@
 <div class="clear"></div>
 
 <div class="log_details">
-	<%= render "log_display" %>
+	<div class="clear"></div>
+	<ul>
+	<% read_file(@log_file,@last_md5).each do |rl| %>
+		<%= render "log_display", rl: rl %>
+	<% end %>
+	</ul>
+
+	<script>
+		$(document).ready(function(){
+			enable_log_toggle();
+		});
+	</script>
 </div>
+<script>
+	setInterval(function(){
+		$.get('<%= root_path %>', { last_md5: $("li").first().attr('data-md-hash') } );
+	}, 5000);
+</script>

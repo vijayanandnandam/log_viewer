@@ -1,1 +1,4 @@
-$("#log_details").html("<%= escape_javascript render "log_display" %>");
+<% read_file(@log_file,@last_md5).each do |rl| %>
+	$('.log_details ul').prepend('<%=escape_javascript render "log_display", rl: rl %>');
+<% end %>
+enable_log_toggle();
