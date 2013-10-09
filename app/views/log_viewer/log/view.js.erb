@@ -2,3 +2,4 @@
 	$('.log_details ul').prepend('<%=escape_javascript render "log_display", rl: rl %>');
 <% end %>
 enable_log_toggle();
+$("#file_info").html("Last updated: <%= Time.zone.now.to_s %>");
