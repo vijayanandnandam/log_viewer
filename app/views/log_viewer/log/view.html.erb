@@ -15,13 +15,18 @@
 	</ul>
 
 	<script>
+		var request_sent = false;
+		$( document ).ajaxComplete(function() {
+			request_sent = false;
+		});
 		$(document).ready(function(){
 			enable_log_toggle();
+			setInterval(function(){
+				if(!request_sent){
+					request_sent = true;
+					$.get('<%= root_path %>', { last_md5: $("li").first().attr('data-md-hash') } );
+				}
+			}, 5000);
 		});
 	</script>
 </div>
-<script>
-	setInterval(function(){
-		$.get('<%= root_path %>', { last_md5: $("li").first().attr('data-md-hash') } );
-	}, 5000);
-</script>

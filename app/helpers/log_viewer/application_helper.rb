@@ -21,6 +21,7 @@ module LogViewer
   	end
 
     def print_line(text)
+      text.force_encoding 'utf-8'
       text.gsub( /\[[0-9;]*m/, "" )
     end
 
