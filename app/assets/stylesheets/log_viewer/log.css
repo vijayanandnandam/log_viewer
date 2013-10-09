@@ -28,7 +28,7 @@
    margin-top:8px;
 }
 
-.header .file_info{
+.header #file_info{
    float:right;      
    margin-top:12px;
    font-size:11px;
