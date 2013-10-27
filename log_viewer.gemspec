@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", "~> 3.0"
   s.add_dependency "elif", "~> 0.1.0"
-
+  s.add_dependency "coderay_bash", "~> 1.0.5"
+  
   s.add_development_dependency "sqlite3"
 end
